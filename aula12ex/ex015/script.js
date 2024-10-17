@@ -30,18 +30,23 @@ function verificar() {
             }
         } else if (fsex[1].checked) {
             genero =  'Mulher'
-            if (idade >=0 && < 10) {
+            if (idade >=0 && idade < 10) {
                 //bebe
-            } else if (idade =< 21) {
+                img.setAttribute('src', 'imagens/mulherbebe.png')
+            } else if (idade < 21) {
                 //Jovem
-            } else if (idade =< 50) {
+                img.setAttribute('src', 'imagens/mulherjovem.png')
+            } else if (idade < 50) {
                 //Adulto
+                img.setAttribute('src', 'imagens/mulheradulta.png')
             } else {
                 //idoso
+                img.setAttribute('src', 'imagens/mulheridosa.png')
             }            
+        } 
+
         }
         res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
         res.appendChild(img)
-    }
-}
+    } 
